@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{= title }}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1> {{=  title }} </h1>
+    <p>Welcome to {{= title }}</p>
+
+    <div id="app-container">
+
+      <ul id="question-list">
+        <li>No questions </li> 
+      </ul>
+      
+      <div>
+        <input id="question-text" type="text" /> 
+        <input id="add-question"  type="button" value="Add"/>
+      </div>
+
+    </div>
+
+    
+
+    <script id="questionTemplate" type="text/template">
+      <p><%= id %></li></p>
+      <p><%= question %></li></p>
+      <button class="delete">Delete</button>
+    </script>
+
+    <script type="text/javascript" src='/js/jquery.js'></script>
+    <script type="text/javascript" src='/js/underscore-min.js'></script>
+    <script type="text/javascript" src='/js/backbone-min.js'></script>
+    <script type="text/javascript" src='/js/questions.js'></script>
+  </body>
+  <script>
+    $(document).ready(function() {
+      console.log("Starting app..."); 
+      var list = new app.List();
+      new app.ListView(list);   
+    });
+  </script>
+</html>
